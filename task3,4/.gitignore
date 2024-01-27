@@ -1,2 +1,4 @@
 node_modules
-products.json
+products/products.json
+orders/orders.json
+users/users.json

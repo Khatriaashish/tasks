@@ -1,12 +1,14 @@
 const fs = require('fs');
+const {generateRandom} = require("../helpers")
+
 
 const readProducts = (search="", product_type="") => {
     const query = new RegExp(search, 'i');
     const filter = new RegExp(product_type, 'i');
-    if(!fs.existsSync("products.json")){
+    if(!fs.existsSync(__dirname + "/products.json")){
         return [];
     }
-    let products = fs.readFileSync("products.json");
+    let products = fs.readFileSync(__dirname + "/products.json");
     products = JSON.parse(products);
 
     //search by query
@@ -22,21 +24,11 @@ const readProducts = (search="", product_type="") => {
     return products
 };
 
-const generateRandom = (len=10)=>{
-    let random = "";
-    const chars = "0123456789asdfghjklqwertyuiopzxcvbnm";
-
-    for (let i=1; i<=len; i++){
-        let pos = Math.ceil(Math.random()*chars.length);
-        random += chars[pos-1];
-    }
-    return random;
-}
 
 const generateUniqueId = (len=10)=>{
     let id = generateRandom();
 
-    if(fs.existsSync("products.json")){
+    if(fs.existsSync(__dirname + "/products.json")){
         const oldProd = readProducts();
         if(oldProd !== '[]'){
             oldProd.forEach(element => {

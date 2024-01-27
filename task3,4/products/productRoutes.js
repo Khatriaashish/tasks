@@ -1,13 +1,10 @@
-const express = require('express');
+const router = require('express').Router();
 const fs = require('fs');
-const { generateUniqueId, readProducts } = require('./helpers');
 
-const app = express();
-
-app.use(express.json());
+const { generateUniqueId, readProducts } = require('./productHelpers')
 
 //to create a new product
-app.post('/create', (req, res)=>{
+router.post('/createProduct', (req, res)=>{
     //getting data from req
     const data = req.body;
 
@@ -27,7 +24,7 @@ app.post('/create', (req, res)=>{
 
     //overwrite newProductArr data in file
     newProductsArr = JSON.stringify(newProductsArr);
-    fs.writeFileSync("products.json", newProductsArr);
+    fs.writeFileSync(__dirname + "/products.json", newProductsArr);
 
     //response
     res.json({
@@ -36,7 +33,7 @@ app.post('/create', (req, res)=>{
 })
 
 //to read product
-app.get('/read', (req, res)=>{
+router.get('/readProduct', (req, res)=>{
     const products = readProducts(req.query['search'], req.query['product_type']);
 
     res.json({
@@ -45,7 +42,7 @@ app.get('/read', (req, res)=>{
 })
 
 //to delete product by its id
-app.delete('/delete/:id', (req, res)=>{
+router.delete('/deleteProduct/:id', (req, res)=>{
     const products = readProducts();
 
     //gettig all products which don't have given id
@@ -53,7 +50,7 @@ app.delete('/delete/:id', (req, res)=>{
 
     //overwrite file with newProductArr
     newProductArr = JSON.stringify(newProductArr);
-    fs.writeFileSync("products.json", newProductArr);
+    fs.writeFileSync(__dirname + "/products.json", newProductArr);
 
     res.json({
         message: "Product deleted Successfully"
@@ -61,7 +58,7 @@ app.delete('/delete/:id', (req, res)=>{
 })
 
 // to update the product quantity
-app.put('/qty/:id', (req, res)=>{
+router.put('/qty/:id', (req, res)=>{
     let products = readProducts();
 
     //looping through every products and changing the qty in product which matches id
@@ -72,7 +69,7 @@ app.put('/qty/:id', (req, res)=>{
     })
 
     products = JSON.stringify(products)
-    fs.writeFileSync('products.json', products);
+    fs.writeFileSync(__dirname + "/products.json", products);
 
     res.json({
         message: "Quantity updated"
@@ -80,7 +77,7 @@ app.put('/qty/:id', (req, res)=>{
 })
 
 //to read out of stock product
-app.get('/out-of-stock', (req, res, next)=>{
+router.get('/out-of-stock', (req, res, next)=>{
     const products = readProducts();
 
     //gettig all products whose qty<5
@@ -93,15 +90,4 @@ app.get('/out-of-stock', (req, res, next)=>{
     })
 })
 
-//404 handle
-app.use((req, res)=>{
-    res.status(404).json({
-        message: "Incorrect API Call"
-    })
-})
-
-app.listen(3030, (err)=>{
-    if(!err){
-        console.log("Server is up at port 3030");
-    }
-})
+module.exports = router

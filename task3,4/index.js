@@ -1,20 +1,11 @@
 const express = require('express');
-const productRouter = require('./products/productRoutes');
-const userRouter = require('./users/userRoutes');
-const orderRouter = require('./orders/orderRoutes')
+const router = require('./src/routes')
 
 const app = express();
 
 app.use(express.json());
 
-//Products
-app.use(productRouter);
-
-//Users
-app.use("/user", userRouter)
-
-//Orders
-app.use("/order", orderRouter);
+app.use('/api/v1', router);
 
 //404 handle
 app.use((req, res)=>{

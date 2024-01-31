@@ -1,0 +1,19 @@
+[
+    {
+        "id": "85omxtm03k",
+        "orderBy": {
+            "name": "User4",
+            "email": "user4@gmail.com"
+        },
+        "order": [
+            {
+                "productId": "unb2rfutoc",
+                "product": "Jeans",
+                "unitPrice": "2000",
+                "quantity": "2"
+            }
+        ],
+        "totalPrice": 4000,
+        "orderedAt": "2024-01-29T08:27:57.193Z"
+    }
+]

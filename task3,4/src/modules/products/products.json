@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Avocado",
+        "price": "500",
+        "description": "Healthiest fruit in the market",
+        "quantity": "25",
+        "product_type": "fruit",
+        "id": "xoy4jnobbk"
+    },
+    {
+        "name": "Jeans",
+        "price": "2000",
+        "description": "Branded Denim Jeans",
+        "quantity": "25",
+        "product_type": "clothing",
+        "id": "unb2rfutoc"
+    },
+    {
+        "name": "Nike Shoes",
+        "price": "10000",
+        "description": "Branded Nike Shoes",
+        "quantity": "3",
+        "product_type": "clothing",
+        "id": "5kw1bfz58o"
+    },
+    {
+        "name": "Iphone",
+        "price": "150000",
+        "description": "Brand new iphone 14",
+        "quantity": "4",
+        "product_type": "electronics",
+        "id": "3wd1128vd7"
+    }
+]

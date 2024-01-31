@@ -1,0 +1,19 @@
+[
+    {
+        "id": "9duz00tknn",
+        "orderBy": {
+            "name": "User1",
+            "email": "user1@gmail.com"
+        },
+        "order": [
+            {
+                "productId": "nia6vrfolq",
+                "product": "Earphone",
+                "unitPrice": "800",
+                "quantity": 4
+            }
+        ],
+        "totalPrice": 3200,
+        "orderedAt": "2024-01-31T09:47:27.024Z"
+    }
+]

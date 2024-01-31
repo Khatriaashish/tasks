@@ -103,7 +103,7 @@ class OrderController{
                 let orderDetails = []
                 user.cart.forEach(elem=>{
                     orderDetails.push({
-                        productId: elem.id,
+                        productId: elem.productId,
                         product: elem.product.name,
                         unitPrice: elem.product.price,
                         quantity: elem.quantity

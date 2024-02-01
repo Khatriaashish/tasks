@@ -8,7 +8,7 @@ class ProductController{
             const data = req.body;
         
             //check if all required data are present or not
-            if (!data.name || !data.price || !data.description || !data.quantity || !data.product_type) {
+            if (!data.name || !data.price || !data.description || !data.stock || !data.product_type) {
                 return res.status(400).json({ message: 'Not sufficient data provided' });
             }
         
@@ -75,7 +75,7 @@ class ProductController{
             //looping through every products and changing the qty in product which matches id
             products.forEach((item)=>{
                 if(item.id === req.params.id){
-                    item.quantity = req.body.qty;
+                    item.stock = req.body.stock;
                 }
             })
         
@@ -96,7 +96,7 @@ class ProductController{
             const products = readProducts();
     
             //gettig all products whose qty<5
-            let newProductArr = products.filter((item)=>(+item.quantity)<5);
+            let newProductArr = products.filter((item)=>(+item.stock)<5);
         
         
             res.json({

@@ -3,8 +3,24 @@
         "name": "Earphone",
         "price": "800",
         "description": "Quality audio",
-        "quantity": "30",
+        "stock": "30",
         "product_type": "electronics",
         "id": "nia6vrfolq"
+    },
+    {
+        "name": "Jeans",
+        "price": "200000",
+        "description": "Branded Denim Jeans",
+        "product_type": "clothing",
+        "id": "eaf2k3sf86",
+        "stock": "3"
+    },
+    {
+        "name": "Jeans",
+        "price": "200000",
+        "description": "Branded Denim Jeans",
+        "stock": "4",
+        "product_type": "clothing",
+        "id": "c0vjqxjok3"
     }
 ]

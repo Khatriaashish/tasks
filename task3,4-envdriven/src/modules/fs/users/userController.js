@@ -9,7 +9,7 @@ class UserController{
             const data = req.body;
 
             //check if all required data are present or not
-            if (!data.name || !data.email || !data.password) {
+            if (!data.name || !data.email ) {
                 return res.status(400).json({ message: 'Not sufficient data provided' });
             }
 
@@ -71,7 +71,7 @@ class UserController{
                 if(user.id === req.params.id){
                     const updateData = req.body;
                     //check if all required data are present or not
-                    if (!updateData.name || !updateData.email || !updateData.password) {
+                    if (!updateData.name || !updateData.email ) {
                         return res.status(400).json({ message: 'Not sufficient data provided' });
                     }
                     updateData.id = req.params.id;

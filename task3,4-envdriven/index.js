@@ -14,19 +14,11 @@ app.get("/health", (req, res, next)=>{
     })
 })
 
-let PORT;
-if(process.env.STORE_TO === 'FS'){
-    PORT = 3030
+let PORT = 2020;
+if(process.env.STORE_TO === 'DB'){
+    require('./src/config/db.config')
 }
-else if(process.env.STORE_TO === 'DB'){
-    PORT = 2020;
-    require("./src/config/db.config");
 
-}
-else{
-    console.log("Invalid storage defined at env");
-    process.exit(1)
-}
 
 app.use('/api/v1', router);
 

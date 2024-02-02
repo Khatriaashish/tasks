@@ -13,7 +13,7 @@
         "description": "Branded Denim Jeans",
         "product_type": "clothing",
         "id": "eaf2k3sf86",
-        "stock": "3"
+        "stock": "30"
     },
     {
         "name": "Jeans",
@@ -22,5 +22,14 @@
         "stock": "4",
         "product_type": "clothing",
         "id": "c0vjqxjok3"
+    },
+    {
+        "name": "Avocado",
+        "price": "500",
+        "description": "kuch bhi",
+        "stock": "50",
+        "product_type": "groceries",
+        "id": "minybpmaae",
+        "image": "1706866823727_1777.png"
     }
 ]

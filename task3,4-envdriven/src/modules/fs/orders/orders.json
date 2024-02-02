@@ -32,5 +32,22 @@
         ],
         "totalPrice": 1600,
         "orderedAt": "2024-02-01T06:24:15.659Z"
+    },
+    {
+        "id": "zcizltg6vq",
+        "orderBy": {
+            "name": "User1",
+            "email": "user1@gmail.com"
+        },
+        "order": [
+            {
+                "productId": "nia6vrfolq",
+                "product": "Earphone",
+                "unitPrice": "800",
+                "quantity": "1"
+            }
+        ],
+        "totalPrice": 800,
+        "orderedAt": "2024-02-01T08:51:45.104Z"
     }
 ]

@@ -8,12 +8,15 @@ class ProductController{
             const data = req.body;
         
             //check if all required data are present or not
-            if (!data.name || !data.price || !data.description || !data.stock || !data.product_type) {
+            if (!data.name || !data.price || !data.description || !data.stock || !data.product_type || !req.file) {
                 return res.status(400).json({ message: 'Not sufficient data provided' });
             }
         
             //generate unique id for data
             data.id = generateUniqueId();
+
+            //image
+            data.image = req.file.filename;
         
             //fetch oldProducts from file
             const oldProducts = readProducts();

@@ -4,6 +4,7 @@ class ProductController{
     create = async (req, res, next)=>{
         try{
             const payload = req.body;
+            payload.image = req.file.filename;
     
             const response = await productSvc.createPayload(payload);
     

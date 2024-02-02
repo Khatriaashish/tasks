@@ -2,10 +2,12 @@ const express = require('express');
 const app = express();
 const router = require('./src/routes');
 const { ZodError } = require('zod');
+const { MulterError } = require('multer');
 require('dotenv').config();
 
 //body-parsers 
 app.use(express.json());
+
 
 //api
 app.get("/health", (req, res, next)=>{
@@ -36,6 +38,13 @@ app.use((error, req, res, next)=>{
         })
         result = msg;
         message = "Validation failure";
+    }
+
+    if(error instanceof MulterError){
+        if(error.code === "LIMIT_FILE_SIZE"){
+            message = "File too large"
+            code = 400
+        }
     }
 
     

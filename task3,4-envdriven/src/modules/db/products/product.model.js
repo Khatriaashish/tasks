@@ -20,7 +20,8 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         enum: ['clothing', 'electronics', 'groceries'],
         require: true
-    }
+    },
+    image: String
 }, {
     timestamps: true,
     autoCreate: true,

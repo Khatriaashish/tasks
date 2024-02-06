@@ -10,7 +10,15 @@ const UserSchema = new mongoose.Schema({
         type: String,
         unique: true,
         require: true
-    }, 
+    },
+    password: {
+        type: String
+    },
+    role: {
+        type: String,
+        enum: ['admin', 'customer'],
+        default: 'customer'
+    },
     cart: [{
         product: {
             type: mongoose.Types.ObjectId,

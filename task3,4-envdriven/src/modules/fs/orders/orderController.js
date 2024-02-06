@@ -29,7 +29,7 @@ class OrderController{
     
             //fetch user from id
             const users = readUsers();
-            const user = users.find((user)=>user.id===req.params.userId);
+            const user = users.find((user)=>user.id===req.authUser.id);
             
             //fetch product from id
             const products = readProducts();
@@ -59,7 +59,7 @@ class OrderController{
             }
     
             //update users.json file
-            const remUsers = users.filter((user)=>user.id!==req.params.userId);
+            const remUsers = users.filter((user)=>user.id!==req.authUser.id);
             console.log(remUsers)
             const newUsersArr = [...remUsers, user];
             fs.writeFileSync(__dirname+"/../users/users.json", JSON.stringify(newUsersArr));
@@ -77,7 +77,7 @@ class OrderController{
         try{
             //fetch user from id
             const users = readUsers();
-            const user = users.find((user)=>user.id===req.params.userId);
+            const user = users.find((user)=>user.id===req.authUser.id);
             
             if(!user){
                 return res.status(400).json({
@@ -126,7 +126,7 @@ class OrderController{
 
                 //clearing user cart after checkout
                 user.cart = [];
-                const remUsers = users.filter((user)=>user.id!==req.params.userId);
+                const remUsers = users.filter((user)=>user.id!==req.authUser.id);
                 const newUsersArr = [...remUsers, user];
                 fs.writeFileSync(__dirname+"/../users/users.json", JSON.stringify(newUsersArr));
     

@@ -9,4 +9,19 @@ const generateRandom = (len=10)=>{
     return random;
 }
 
-module.exports = {generateRandom};
+const getTokenFromHeaders = (req)=>{
+    let token = null;
+
+        if(req.headers['authorization'])
+            token = req.headers['authorization'];
+
+        if(req.headers['x-xsrf-token'])
+            token = req.headers['x-xsrf-token'];
+
+        if(req.query['token'])
+            token = req.query['token'];
+
+    return token;
+}
+
+module.exports = {generateRandom, getTokenFromHeaders};

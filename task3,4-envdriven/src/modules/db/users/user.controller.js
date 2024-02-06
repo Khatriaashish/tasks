@@ -1,9 +1,10 @@
+const AuthRequest = require("../auth/auth.request");
 const userSvc = require("./user.service");
 
 class UserController{
     create = async (req, res, next)=>{
         try{
-            const payload = req.body;
+            const payload = (new AuthRequest(req)).transformRequestData();
     
             const response = await userSvc.createPayload(payload);
     

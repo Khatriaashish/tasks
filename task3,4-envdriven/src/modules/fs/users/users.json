@@ -1,8 +1,10 @@
 [
     {
-        "name": "User1",
-        "email": "user1@gmail.com",
-        "id": "pfn8wk4swk",
+        "name": "Ashish Khatri",
+        "email": "khatriaashish1@gmail.com",
+        "password": "$2a$10$cqAuqZT9XCnpQHeV94yGQO7ST5mJi5bPMUl.lz5VpYxQY4xNt1vX.",
+        "id": "qyzdx9j9ny",
+        "role": "admin",
         "cart": []
     }
 ]

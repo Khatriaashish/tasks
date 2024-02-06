@@ -1,35 +1,11 @@
 [
     {
-        "name": "Earphone",
-        "price": "800",
-        "description": "Quality audio",
-        "stock": "30",
-        "product_type": "electronics",
-        "id": "nia6vrfolq"
-    },
-    {
-        "name": "Jeans",
-        "price": "200000",
-        "description": "Branded Denim Jeans",
-        "product_type": "clothing",
-        "id": "eaf2k3sf86",
-        "stock": "30"
-    },
-    {
-        "name": "Jeans",
-        "price": "200000",
-        "description": "Branded Denim Jeans",
-        "stock": "4",
-        "product_type": "clothing",
-        "id": "c0vjqxjok3"
-    },
-    {
-        "name": "Avocado",
-        "price": "500",
-        "description": "kuch bhi",
+        "name": "Monitor",
+        "price": "20000",
+        "description": "retina display",
         "stock": "50",
-        "product_type": "groceries",
-        "id": "minybpmaae",
-        "image": "1706866823727_1777.png"
+        "product_type": "electronics",
+        "id": "0tcm9d66i8",
+        "image": "1707190372484_9928.png"
     }
 ]

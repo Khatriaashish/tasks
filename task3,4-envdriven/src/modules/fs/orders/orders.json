@@ -1,53 +1,19 @@
 [
     {
-        "id": "9duz00tknn",
+        "id": "6uaxooaanp",
         "orderBy": {
-            "name": "User1",
-            "email": "user1@gmail.com"
+            "name": "Ashish Khatri",
+            "email": "khatriaashish1@gmail.com"
         },
         "order": [
             {
-                "productId": "nia6vrfolq",
-                "product": "Earphone",
-                "unitPrice": "800",
-                "quantity": 4
+                "productId": "0tcm9d66i8",
+                "product": "Monitor",
+                "unitPrice": "20000",
+                "quantity": "2"
             }
         ],
-        "totalPrice": 3200,
-        "orderedAt": "2024-01-31T09:47:27.024Z"
-    },
-    {
-        "id": "mcfzblyi30",
-        "orderBy": {
-            "name": "User1",
-            "email": "user1@gmail.com"
-        },
-        "order": [
-            {
-                "productId": "nia6vrfolq",
-                "product": "Earphone",
-                "unitPrice": "800",
-                "quantity": 2
-            }
-        ],
-        "totalPrice": 1600,
-        "orderedAt": "2024-02-01T06:24:15.659Z"
-    },
-    {
-        "id": "zcizltg6vq",
-        "orderBy": {
-            "name": "User1",
-            "email": "user1@gmail.com"
-        },
-        "order": [
-            {
-                "productId": "nia6vrfolq",
-                "product": "Earphone",
-                "unitPrice": "800",
-                "quantity": "1"
-            }
-        ],
-        "totalPrice": 800,
-        "orderedAt": "2024-02-01T08:51:45.104Z"
+        "totalPrice": 40000,
+        "orderedAt": "2024-02-06T03:43:28.694Z"
     }
 ]

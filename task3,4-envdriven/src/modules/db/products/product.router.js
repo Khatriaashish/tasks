@@ -1,3 +1,5 @@
+const CheckLogin = require('../../../middlewares/authdb.middleware');
+const checkPermission = require('../../../middlewares/rbac.middleware');
 const reqValidator = require('../../../middlewares/request-validator');
 const uploader = require('../../../middlewares/uploader.middleware');
 const productCtrl = require('./product.controller');
@@ -11,14 +13,14 @@ const dirSetup = (req, res, next)=>{
 const router = require('express').Router();
 
 router.route('/')
-    .post(dirSetup, uploader.single('image'), reqValidator(productCreateSchema), productCtrl.create)
-    .get(productCtrl.list);
+    .post(CheckLogin, checkPermission('admin'), dirSetup, uploader.single('image'), reqValidator(productCreateSchema), productCtrl.create)
+    .get(CheckLogin, checkPermission('admin'), productCtrl.list);
 
-router.get('/out-of-stock', productCtrl.outOfStock)
+router.get('/out-of-stock', CheckLogin, checkPermission('admin'), productCtrl.outOfStock)
 
 router.route('/:id')
-    .put(productCtrl.updateProduct)
-    .delete(productCtrl.delete)
-    .put(productCtrl.updateStockQty);
+    .put(CheckLogin, checkPermission('admin'), productCtrl.updateProduct)
+    .delete(CheckLogin, checkPermission('admin'), productCtrl.delete)
+    .put(CheckLogin, checkPermission('admin'), productCtrl.updateStockQty);
 
 module.exports = router;

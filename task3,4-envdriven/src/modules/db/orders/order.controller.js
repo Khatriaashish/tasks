@@ -13,9 +13,9 @@ class OrderController{
                 orderedQty: +payload.qty
             }
 
-            const user = await userSvc.getById(req.params.userId);
+            const user = req.authUser;
     
-            const response = await userSvc.updateUser(req.params.userId, {$push: {cart: cartItem} });
+            const response = await userSvc.updateUser(user._id, {$push: {cart: cartItem} });
     
             res.json({
                 result: null,
@@ -30,7 +30,7 @@ class OrderController{
 
     checkOut = async (req, res, next)=>{
         try{
-            const user = await userSvc.getById(req.params.userId);
+            const user = req.authUser;
             const orderedItems = user.cart;
             let totalAmt = 0;
             orderedItems.forEach((item)=>{
@@ -46,7 +46,7 @@ class OrderController{
             }
             else{
                 const response = await orderSvc.createPayload(order);
-                const updateCart = await userSvc.updateUser(req.params.userId, {cart: []})
+                const updateCart = await userSvc.updateUser(req.authUser._id, {cart: []})
 
                 res.json({
                     result: null,

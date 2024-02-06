@@ -1,2 +1,7 @@
 .env
 node_modules
+public
+src/modules/fs/users/users.json
+src/modules/fs/orders/orders.json
+src/modules/fs/products/products.json
+src/modules/fs/auth/pats.json
